@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { INTERVALS, type Interval } from "@/lib/market";
 import { SymbolHeader } from "@/components/trading/symbol-header";
-import { TradingChart } from "@/components/trading/trading-chart";
+import { TradingViewChart } from "@/components/trading/tradingview-chart";
 import { Watchlist } from "@/components/trading/watchlist";
 
 export function DashboardView() {
@@ -35,7 +35,7 @@ export function DashboardView() {
           </div>
         </div>
         <div className="min-h-[420px] flex-1 overflow-hidden rounded-xl border border-border/60 bg-card/40 p-2">
-          <TradingChart symbol={symbol} interval={interval} />
+          <TradingViewChart symbol={symbol} interval={interval} />
         </div>
       </div>
 
