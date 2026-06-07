@@ -48,6 +48,7 @@ export function TradingViewChart({ symbol, interval }: TradingViewChartProps) {
       backgroundColor: "rgba(0, 0, 0, 0)",
       gridColor: "rgba(255, 255, 255, 0.06)",
       hide_top_toolbar: false,
+      hide_side_toolbar: false,
       hide_legend: false,
       allow_symbol_change: false,
       withdateranges: true,
