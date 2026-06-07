@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 const features = [
   {
@@ -106,12 +107,15 @@ export default function Home() {
               Entscheidungen treffen wollen.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Button size="lg" className="px-8">
+              <Link href="/dashboard" className={cn(buttonVariants({ size: "lg" }), "px-8")}>
                 Kostenlos starten
-              </Button>
-              <Button size="lg" variant="outline" className="px-8">
+              </Link>
+              <Link
+                href="/dashboard"
+                className={cn(buttonVariants({ size: "lg", variant: "outline" }), "px-8")}
+              >
                 Live-Demo ansehen
-              </Button>
+              </Link>
             </div>
             <p className="mt-6 text-sm text-muted-foreground">
               Keine Kreditkarte erforderlich · Jederzeit kündbar
