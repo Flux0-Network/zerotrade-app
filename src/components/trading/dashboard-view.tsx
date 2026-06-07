@@ -12,8 +12,8 @@ export function DashboardView() {
   const [interval, setInterval] = useState<Interval>("60m");
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-3 p-3 lg:grid lg:grid-cols-[1fr_300px]">
-      <div className="flex min-h-0 flex-col gap-3">
+    <div className="flex flex-col gap-3 p-3 lg:grid lg:min-h-0 lg:flex-1 lg:grid-cols-[1fr_300px]">
+      <div className="flex flex-col gap-3 lg:min-h-0">
         <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-border/60 bg-card/40 px-5 py-3">
           <SymbolHeader key={symbol} symbol={symbol} />
           <div className="flex items-center gap-1 rounded-lg border border-border/60 bg-background/40 p-1">
@@ -38,7 +38,7 @@ export function DashboardView() {
         </div>
       </div>
 
-      <aside className="flex min-h-0 flex-col gap-3 rounded-xl border border-border/60 bg-card/40 p-3">
+      <aside className="flex flex-col gap-3 rounded-xl border border-border/60 bg-card/40 p-3 lg:min-h-0">
         <div className="flex items-center justify-between px-1">
           <h2 className="text-sm font-semibold tracking-tight">Watchlist</h2>
           <span className="flex items-center gap-1.5 text-xs font-medium text-emerald-400">

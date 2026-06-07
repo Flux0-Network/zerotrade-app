@@ -26,7 +26,7 @@ export default function DashboardPage() {
           </div>
         </div>
       </header>
-      <main className="flex w-full flex-1 flex-col overflow-hidden">
+      <main className="flex w-full flex-1 flex-col overflow-y-auto lg:overflow-hidden">
         <DashboardView />
       </main>
     </div>
