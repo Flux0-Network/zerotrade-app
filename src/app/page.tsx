@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -55,16 +56,7 @@ const plans = [
   },
 ];
 
-const exchanges = [
-  { name: "Binance" },
-  { name: "Bybit" },
-  { name: "Kraken" },
-  { name: "BingX" },
-  { name: "Bitfinex" },
-  { name: "CoinEx" },
-  { name: "MEXC" },
-  { name: "KuCoin" },
-];
+const exchanges = [{ name: "MEXC", logo: "/mexc-logo.svg" }];
 
 export default function Home() {
   return (
@@ -76,6 +68,11 @@ export default function Home() {
               Z
             </span>
             <span>ZeroTrade</span>
+            <Separator orientation="vertical" className="mx-1 h-5" />
+            <span className="flex items-center gap-1.5 text-xs font-normal text-muted-foreground">
+              <Image src="/mexc-logo.svg" alt="MEXC" width={18} height={18} className="rounded-[4px]" />
+              Powered by MEXC
+            </span>
           </Link>
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
             <Link href="#exchanges" className="transition-colors hover:text-foreground">
@@ -158,22 +155,26 @@ export default function Home() {
           <div className="mx-auto w-full max-w-6xl px-6 py-24">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-semibold tracking-tight">
-                Verbinde deine bevorzugte Börse
+                Direkt mit MEXC verbunden
               </h2>
               <p className="mt-4 text-muted-foreground">
-                ZeroTrade arbeitet mit den größten Krypto-Börsen zusammen —
-                Daten und Trades direkt an einem Ort.
+                ZeroTrade ist nahtlos mit MEXC integriert — Echtzeit-Daten und
+                Trades direkt an einem Ort.
               </p>
             </div>
-            <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            <div className="mt-12 flex justify-center">
               {exchanges.map((exchange) => (
                 <div
                   key={exchange.name}
-                  className="flex items-center gap-3 rounded-xl border border-border/60 bg-card/40 px-5 py-4 transition-colors hover:border-emerald-500/40 hover:bg-card/70"
+                  className="flex items-center gap-3 rounded-xl border border-border/60 bg-card/40 px-6 py-4 transition-colors hover:border-emerald-500/40 hover:bg-card/70"
                 >
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/15 text-sm font-semibold text-emerald-400">
-                    {exchange.name.charAt(0)}
-                  </span>
+                  <Image
+                    src={exchange.logo}
+                    alt={exchange.name}
+                    width={32}
+                    height={32}
+                    className="rounded-lg"
+                  />
                   <span className="font-semibold tracking-tight">
                     {exchange.name.toUpperCase()}
                   </span>
