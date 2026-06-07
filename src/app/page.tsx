@@ -56,8 +56,6 @@ const plans = [
   },
 ];
 
-const exchanges = [{ name: "MEXC", logo: "/mexc-logo.svg" }];
-
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
@@ -69,13 +67,12 @@ export default function Home() {
             </span>
             <span>ZeroTrade</span>
             <Separator orientation="vertical" className="mx-1 h-5" />
-            <span className="flex items-center gap-1.5 text-xs font-normal text-muted-foreground">
-              <Image src="/mexc-logo.svg" alt="MEXC" width={18} height={18} className="rounded-[4px]" />
-              Powered by MEXC
+            <span className="text-xs font-normal text-muted-foreground">
+              Powered by Flux Network
             </span>
           </Link>
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
-            <Link href="#exchanges" className="transition-colors hover:text-foreground">
+            <Link href="#features" className="transition-colors hover:text-foreground">
               Märkte
             </Link>
             <Link href="#features" className="transition-colors hover:text-foreground">
@@ -108,6 +105,19 @@ export default function Home() {
             <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
               Analysiere Märkte. Handle smarter.
             </h1>
+            <div className="mt-6 flex items-center gap-2.5 rounded-full border border-border/60 bg-card/40 py-1.5 pr-4 pl-1.5 text-sm">
+              <Image
+                src="/mexc-logo.svg"
+                alt="MEXC"
+                width={24}
+                height={24}
+                className="rounded-full"
+              />
+              <span className="text-muted-foreground">
+                Direkt verbunden mit{" "}
+                <span className="font-semibold text-foreground">MEXC</span>
+              </span>
+            </div>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground text-balance">
               ZeroTrade vereint Echtzeit-Charts, präzise Marktanalysen und
               Trading-Tools an einem Ort — für Trader, die fundierte
@@ -146,39 +156,6 @@ export default function Home() {
                     <CardDescription>{feature.description}</CardDescription>
                   </CardHeader>
                 </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="exchanges" className="border-t border-border/60">
-          <div className="mx-auto w-full max-w-6xl px-6 py-24">
-            <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-semibold tracking-tight">
-                Direkt mit MEXC verbunden
-              </h2>
-              <p className="mt-4 text-muted-foreground">
-                ZeroTrade ist nahtlos mit MEXC integriert — Echtzeit-Daten und
-                Trades direkt an einem Ort.
-              </p>
-            </div>
-            <div className="mt-12 flex justify-center">
-              {exchanges.map((exchange) => (
-                <div
-                  key={exchange.name}
-                  className="flex items-center gap-3 rounded-xl border border-border/60 bg-card/40 px-6 py-4 transition-colors hover:border-emerald-500/40 hover:bg-card/70"
-                >
-                  <Image
-                    src={exchange.logo}
-                    alt={exchange.name}
-                    width={32}
-                    height={32}
-                    className="rounded-lg"
-                  />
-                  <span className="font-semibold tracking-tight">
-                    {exchange.name.toUpperCase()}
-                  </span>
-                </div>
               ))}
             </div>
           </div>
