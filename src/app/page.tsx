@@ -33,23 +33,15 @@ const plans = [
     name: "Free",
     price: "0€",
     period: "/ Monat",
-    description: "Für den Einstieg in Marktanalyse und Trading.",
-    features: ["Echtzeit-Kurse", "Basis-Charts", "1 Watchlist"],
-    cta: "Kostenlos starten",
-    highlighted: false,
-  },
-  {
-    name: "Pro",
-    price: "29€",
-    period: "/ Monat",
-    description: "Für aktive Trader, die mehr Tiefe brauchen.",
+    description: "Voller Funktionsumfang für jeden Trader — komplett kostenlos.",
     features: [
-      "Erweiterte Indikatoren",
+      "Echtzeit-Kurse & Charts",
+      "Alle Indikatoren & Zeichentools",
       "KI-Marktsignale",
       "Unbegrenzte Watchlists",
       "Portfolio-Analyse",
     ],
-    cta: "Pro testen",
+    cta: "Kostenlos starten",
     highlighted: true,
   },
   {
@@ -61,6 +53,17 @@ const plans = [
     cta: "Kontakt aufnehmen",
     highlighted: false,
   },
+];
+
+const exchanges = [
+  { name: "Binance" },
+  { name: "Bybit" },
+  { name: "Kraken" },
+  { name: "BingX" },
+  { name: "Bitfinex" },
+  { name: "CoinEx" },
+  { name: "MEXC" },
+  { name: "KuCoin" },
 ];
 
 export default function Home() {
@@ -75,7 +78,7 @@ export default function Home() {
             <span>ZeroTrade</span>
           </Link>
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
-            <Link href="#features" className="transition-colors hover:text-foreground">
+            <Link href="#exchanges" className="transition-colors hover:text-foreground">
               Märkte
             </Link>
             <Link href="#features" className="transition-colors hover:text-foreground">
@@ -151,6 +154,35 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="exchanges" className="border-t border-border/60">
+          <div className="mx-auto w-full max-w-6xl px-6 py-24">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-semibold tracking-tight">
+                Verbinde deine bevorzugte Börse
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                ZeroTrade arbeitet mit den größten Krypto-Börsen zusammen —
+                Daten und Trades direkt an einem Ort.
+              </p>
+            </div>
+            <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+              {exchanges.map((exchange) => (
+                <div
+                  key={exchange.name}
+                  className="flex items-center gap-3 rounded-xl border border-border/60 bg-card/40 px-5 py-4 transition-colors hover:border-emerald-500/40 hover:bg-card/70"
+                >
+                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-emerald-500/15 text-sm font-semibold text-emerald-400">
+                    {exchange.name.charAt(0)}
+                  </span>
+                  <span className="font-semibold tracking-tight">
+                    {exchange.name.toUpperCase()}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="pricing" className="border-t border-border/60">
           <div className="mx-auto w-full max-w-6xl px-6 py-24">
             <div className="mx-auto max-w-2xl text-center">
@@ -161,7 +193,7 @@ export default function Home() {
                 Starte kostenlos und upgrade, sobald du mehr Tiefe brauchst.
               </p>
             </div>
-            <div className="mt-16 grid gap-6 lg:grid-cols-3">
+            <div className="mx-auto mt-16 grid max-w-3xl gap-6 sm:grid-cols-2">
               {plans.map((plan) => (
                 <Card
                   key={plan.name}
