@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -66,10 +65,6 @@ export default function Home() {
               Z
             </span>
             <span>ZeroTrade</span>
-            <Separator orientation="vertical" className="mx-1 h-5" />
-            <span className="text-xs font-normal text-muted-foreground">
-              Powered by Flux Network
-            </span>
           </Link>
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
             <Link href="#features" className="transition-colors hover:text-foreground">
@@ -105,19 +100,6 @@ export default function Home() {
             <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-balance sm:text-6xl">
               Analysiere Märkte. Handle smarter.
             </h1>
-            <div className="mt-6 flex items-center gap-2.5 rounded-full border border-border/60 bg-card/40 py-1.5 pr-4 pl-1.5 text-sm">
-              <Image
-                src="/mexc-logo.svg"
-                alt="MEXC"
-                width={24}
-                height={24}
-                className="rounded-full"
-              />
-              <span className="text-muted-foreground">
-                Direkt verbunden mit{" "}
-                <span className="font-semibold text-foreground">MEXC</span>
-              </span>
-            </div>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground text-balance">
               ZeroTrade vereint Echtzeit-Charts, präzise Marktanalysen und
               Trading-Tools an einem Ort — für Trader, die fundierte
@@ -228,7 +210,10 @@ export default function Home() {
 
       <footer className="border-t border-border/60">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-4 px-6 py-10 text-sm text-muted-foreground sm:flex-row sm:justify-between">
-          <span>© {new Date().getFullYear()} ZeroTrade. Alle Rechte vorbehalten.</span>
+          <span className="flex flex-col items-center gap-1 sm:items-start">
+            <span>© {new Date().getFullYear()} ZeroTrade. Alle Rechte vorbehalten.</span>
+            <span className="text-xs text-muted-foreground/70">Powered by Flux Network</span>
+          </span>
           <div className="flex items-center gap-6">
             <Link href="#" className="transition-colors hover:text-foreground">
               Datenschutz
