@@ -47,7 +47,7 @@ export function Watchlist({ selected, onSelect }: WatchlistProps) {
             key={info.symbol}
             onClick={() => onSelect(info.symbol)}
             className={cn(
-              "flex items-center justify-between rounded-lg px-3 py-2.5 text-left transition-colors",
+              "flex items-center justify-between rounded-lg px-3 py-3 text-left transition-all duration-150 active:scale-[0.98]",
               selected === info.symbol
                 ? "bg-emerald-500/10 ring-1 ring-emerald-500/30"
                 : "hover:bg-accent/60",

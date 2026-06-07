@@ -9,9 +9,9 @@ export const metadata = {
 
 export default function DashboardPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background text-foreground">
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="mx-auto flex h-16 w-full max-w-[1600px] items-center justify-between px-6">
+    <div className="flex h-screen flex-col overflow-hidden bg-background text-foreground">
+      <header className="z-40 border-b border-border/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="flex h-14 w-full items-center justify-between px-4 lg:px-6">
           <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
             <span className="flex h-7 w-7 items-center justify-center rounded-md bg-emerald-500/15 text-emerald-400">
               Z
@@ -26,7 +26,7 @@ export default function DashboardPage() {
           </div>
         </div>
       </header>
-      <main className="mx-auto flex w-full max-w-[1600px] flex-1 flex-col">
+      <main className="flex w-full flex-1 flex-col overflow-hidden">
         <DashboardView />
       </main>
     </div>
